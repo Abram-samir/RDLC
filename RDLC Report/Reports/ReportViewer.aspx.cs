@@ -25,7 +25,7 @@ namespace RDLC_Report.Reports
             {
                 Page.Title = "Report|" + reportParam.ReportTitle;
                 var dt = new DataTable();
-                dt = reportParam.DataSource();
+                dt = reportParam.DataSource;
                 if (dt.Rows.Count>0)
                 {
                     GenerateReportDocument(reportParam,reportParam.ReportType,dt);
@@ -41,7 +41,7 @@ namespace RDLC_Report.Reports
             string dsName = reportParam.DataSetName;
             ReportViewer1.LocalReport.DataSources.Clear();
             ReportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource(dsName,data));
-            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~" + "Reports//rpt//" + reportParam.RptFileName);
+            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~" + "/Reports//rpt//" + reportParam.RptFileName);
             ReportViewer1.DataBind();
             ReportViewer1.LocalReport.Refresh();
         }

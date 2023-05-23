@@ -36,7 +36,7 @@ namespace RDLC_Report.Controllers
             var data = GetEmployeeInfo();
             objReportParams.DataSource = data.Tables[0];
             objReportParams.ReportTitle = "Employee Info Report";
-            objReportParams.RptFileName = "";
+            objReportParams.RptFileName = "EmployeeInfoReport.rdlc";
             objReportParams.ReportType = "EmployeeInfoReport";
             objReportParams.DataSetName = "dsEmployeeReport";
             this.HttpContext.Session["ReportParam"] = objReportParams;
